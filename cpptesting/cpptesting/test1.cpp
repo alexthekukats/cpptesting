@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include "Header.h"
 
 int main()
@@ -10,6 +11,7 @@ int main()
 		double struct2 = 0xf0;
 		char struct3[16] = "\xf2\xf2\xf2\xf2\xf2\xf2\xf2\xf2";
 		bool struct4 = false;
+		char sztring5[16];
 
 	}MyStruct;
 
@@ -23,6 +25,10 @@ int main()
 	unsigned char sztring[16] = "\x02\x02\x02\x02\x02\x02\x02\x02";
 	signed char sztring2[16] = "\x03\x03\x03\x03\x03\x03\x03\x03";
 	const char sztring3[16] = "\x04\x04\x04\x04\x04\x04\x04\x04";
+	char sztring4[16];
+
+	strcpy(sztring4, sztring3);
+
 
 	if (szam == szam2)
 	{
@@ -66,7 +72,7 @@ int main()
 
 	puts(MyStruct.struct3);
 
-
+	strcpy(MyStruct.sztring5, sztring3);
 
 	return 0;
 }
