@@ -4,7 +4,6 @@
 
 int main()
 {
-
 	struct MyStruct
 	{
 		int struct1 = 0xf0;
@@ -15,6 +14,7 @@ int main()
 
 	}MyStruct;
 
+
 	int szam = 0x01;
 	float szam2 = 0x05;
 	double szam3 = 0x06;
@@ -22,12 +22,17 @@ int main()
 	volatile int szam5 = 0x09;
 	static int static_int = 0x07;
 
-	unsigned char sztring[16] = "\x02\x02\x02\x02\x02\x02\x02\x02";
-	signed char sztring2[16] = "\x03\x03\x03\x03\x03\x03\x03\x03";
-	const char sztring3[16] = "\x04\x04\x04\x04\x04\x04\x04\x04";
+	unsigned char sztring[16] = "\x02\x02\x02\x02\x02\x02\x02\x02\xfe";
+	signed char sztring2[16] = "\x03\x03\x03\x03\x03\x03\x03\x03\xfe";
+	const char sztring3[16] = "\x04\x04\x04\x04\x04\x04\x04\x04\xfe";
 	char sztring4[16];
 
+
 	strcpy(sztring4, sztring3);
+	szam4 *= szam5;
+
+	puts(MyStruct.struct3);
+	strcpy(MyStruct.sztring5, sztring3);
 
 
 	if (szam == szam2)
@@ -47,7 +52,6 @@ int main()
 	{
 		puts("asd2");
 	}
-
 
 	switch (szam4)
 	{
@@ -69,10 +73,6 @@ int main()
 			break;
 		}
 	}
-
-	puts(MyStruct.struct3);
-
-	strcpy(MyStruct.sztring5, sztring3);
 
 	return 0;
 }
